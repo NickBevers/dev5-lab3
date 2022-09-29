@@ -1,5 +1,6 @@
 export default class Weather{
     constructor(){
+        this.getWeather();
     }
     
     checkLastCall(){
@@ -15,5 +16,22 @@ export default class Weather{
         }
     };
 
-    
+    getWeather(){
+        if(!this.checkLastCall()){
+            navigator.geolocation.getCurrentPosition(position => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude.toFixed(4)}&longitude=${longitude.toFixed(4)}&daily=weathercode,rain_sum,windspeed_10m_max&timezone=auto`)
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('weatherData', JSON.stringify(data));
+                    console.log(data);
+                })
+            });
+        }else{
+            let data = JSON.parse(localStorage.getItem('weatherData'));
+            console.log(data);
+        }
+    }
 }
