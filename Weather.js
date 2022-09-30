@@ -43,6 +43,25 @@ export default class Weather{
         };
     }
 
+    
+    static getAnimalGif(title, productUrl, animal){
+        let animalGif;
+        
+        fetch("./variables.json")
+        .then(response => response.json())
+        .then(data => {
+            let url = `https://api.giphy.com/v1/gifs/search?api_key=${data.giphy_url}&q=${animal}`;
+            fetch(url)
+            .then(response => response.json())
+            .then(res => {
+                // console.log(res.data[2].images.original.url)
+                animalGif = res.data[2].images.original.url;
+                // return animalGif;
+                this.setAdvert(title, productUrl, animalGif);
+            })
+        })
+    }
+
 
     static setAdvert(title, productUrl, gifUrl){
         document.querySelector('#app').innerHTML = `
