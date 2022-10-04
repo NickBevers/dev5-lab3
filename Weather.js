@@ -23,10 +23,10 @@ export default class Weather{
 
                     if (weatherData.daily.rain_sum[1] > 3){
                         console.log('It will rain tomorrow');
-                        animalUrl = this.getAnimalGif("fish");
+                        animalUrl = this.getAnimalGif("Feel like a fish in the rain with Dior", "https://www.dior.com/nl_be/fashion/products/293B103CB041_C800-zwemshort-met-dior-oblique-motief-grijs-technisch-canvas?objectID=293B103CB041_C800&query=zwem&queryID=e895fbc2265fc711eec25a4cd2a5f7fd", "sunglasses");
                     } else{
                         console.log('It will not rain tomorrow');
-                        animalUrl = this.getAnimalGif("vulture");
+                        animalUrl = this.getAnimalGif("Protect your eyes with the Dior sunglasses","https://www.dior.com/nl_be/fashion/products/DSGTB3UXR_10A0-diorsignature-b3u-zonnebril-zwarte-vlinderzonnebril?objectID=DSGTB3UXR_10A0&query=zonnebril&queryID=2dabb9de753ddd5ae82c74dd8b1ccaf9" , "swimming");
                     }
                 })
             });
@@ -35,10 +35,10 @@ export default class Weather{
 
             if (weatherData.daily.rain_sum[1] > 3){
                 console.log('It will rain tomorrow');
-                animalUrl = this.getAnimalGif("Feel like a fish in the rain with Dior", "https://www.dior.com/nl_be/fashion/products/293B103CB041_C800-zwemshort-met-dior-oblique-motief-grijs-technisch-canvas?objectID=293B103CB041_C800&query=zwem&queryID=e895fbc2265fc711eec25a4cd2a5f7fd", "fish");
+                animalUrl = this.getAnimalGif("Feel like a fish in the rain with Dior", "https://www.dior.com/nl_be/fashion/products/293B103CB041_C800-zwemshort-met-dior-oblique-motief-grijs-technisch-canvas?objectID=293B103CB041_C800&query=zwem&queryID=e895fbc2265fc711eec25a4cd2a5f7fd", "swimming");
             } else{
                 console.log('It will not rain tomorrow');
-                animalUrl = this.getAnimalGif("Protect your eyes with the Dior sunglasses","https://www.dior.com/nl_be/fashion/products/DSGTB3UXR_10A0-diorsignature-b3u-zonnebril-zwarte-vlinderzonnebril?objectID=DSGTB3UXR_10A0&query=zonnebril&queryID=2dabb9de753ddd5ae82c74dd8b1ccaf9" , "vulture");
+                animalUrl = this.getAnimalGif("Protect your eyes with the Dior sunglasses","https://www.dior.com/nl_be/fashion/products/DSGTB3UXR_10A0-diorsignature-b3u-zonnebril-zwarte-vlinderzonnebril?objectID=DSGTB3UXR_10A0&query=zonnebril&queryID=2dabb9de753ddd5ae82c74dd8b1ccaf9" , "sunglasses");
             }
         };
     }
